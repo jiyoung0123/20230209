@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let card;
+      let a;
+      let tryCount = 1;
+
+      alert("난수 맞추기 게임을 시작합니다. 난수를 먼저 뽑겠습니다.");
+      card = Math.floor(Math.random() * 100);
+      alert("수를 결정하였습니다. 맞춰보세요!");
+
+      while (true) {
+        alert(`${tryCount} 번째 시도입니다.`);
+        a = window.prompt();
+        if (a == card) {
+          alert("정답");
+          break;
+        } else if (a < card) {
+          alert("더 큰수");
+          tryCount++;
+        } else {
+          alert("더 작은수");
+        }
+      }
+    </script>
+  </body>
+</html>

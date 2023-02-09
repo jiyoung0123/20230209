@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let low = 0;
+      let high = 100;
+      let card = 0; //정답
+      let a = 0; // 입력
+      alert("난수 맞추기 게임을 시작합니다. 난수를 먼저 뽑겠습니다.");
+      let tryCount = 1; //시도횟수
+      card = Math.floor(Math.random() * 100); // 0-99까지 난수 생성
+      alert(`난수를 설정하였습니다. 지금부터 시작합니다.`);
+      while (true) {
+        alert(`${tryCount}번째 시도입니다.`);
+        alert(`범위는 ${low} - ${high} 입니다. 숫자를 입력하세요`);
+        a = window.prompt();
+        if (a == card) {
+          alert(`축하합니다. 정답입니다.`);
+          break;
+        } else {
+          if (a > card && a < high) {
+            alert(`틀렸습니다. 정답은 더 낮은 수 입니다.`);
+            high = a;
+            tryCount++;
+          } else if (a < card && a > low) {
+            alert(`틀렸습니다. 정답은 더 높은 수 입니다.`);
+            low = a;
+            tryCount++;
+          } else if (a > high || a < low) {
+            alert(`잘못 입력하셨습니다. 다시 입력해주세요.`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
